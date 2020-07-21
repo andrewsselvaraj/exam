@@ -1,4 +1,4 @@
-package paypal.payment;
+package com.payment;
 
 /**
  * Hello world!
