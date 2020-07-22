@@ -17,7 +17,7 @@ public class Transaction implements Serializable {
     
     
     
-    private String title;
+    private String transactionType;
     private String abbreviation;
     private int modules;
     private double fee;
@@ -29,7 +29,7 @@ public class Transaction implements Serializable {
     }
 
     public Transaction(String title, String abbreviation, int modules, double fee) {
-        this.title = title;
+        this.transactionType = title;
         this.abbreviation = abbreviation;
         this.modules = modules;
         this.fee = fee;
@@ -44,11 +44,11 @@ public class Transaction implements Serializable {
     }
 
     public String getTitle() {
-        return title;
+        return transactionType;
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        this.transactionType = title;
     }
 
     public String getAbbreviation() {
@@ -100,7 +100,7 @@ public class Transaction implements Serializable {
     public String toString() {
         return "Course{" +
                 "id=" + id +
-                ", title='" + title + '\'' +
+                ", title='" + transactionType + '\'' +
                 ", abbreviation='" + abbreviation + '\'' +
                 ", modules=" + modules +
                 ", fee=" + fee +
