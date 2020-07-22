@@ -1,4 +1,4 @@
-package com.paypal.payment.dao;
+package com.paypal.payment.bean;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -12,18 +12,14 @@ public class Transaction implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    
-    
-    
+    private Long id; 
     private String transactionType;
     private String abbreviation;
     private int modules;
     private double fee;
 
     @ManyToMany(mappedBy = "transactions", fetch = FetchType.LAZY)
-    private Set<User> users = new HashSet<>();
+    private Set<UserDetails> users = new HashSet<>();
 
     public Transaction() {
     }
@@ -75,11 +71,11 @@ public class Transaction implements Serializable {
         this.fee = fee;
     }
 
-    public Set<User> getStudents() {
+    public Set<UserDetails> getStudents() {
         return users;
     }
 
-    public void setStudents(Set<User> students) {
+    public void setStudents(Set<UserDetails> students) {
         this.users = students;
     }
 
