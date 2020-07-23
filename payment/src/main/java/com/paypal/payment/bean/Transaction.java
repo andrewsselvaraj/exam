@@ -2,6 +2,7 @@ package com.paypal.payment.bean;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -13,94 +14,56 @@ public class Transaction implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; 
-    private String transactionType;
-    private String abbreviation;
-    private int modules;
-    private double fee;
-
+   	private String transactionType;
+    private Date tranasctionDate;
     @ManyToMany(mappedBy = "transactions", fetch = FetchType.LAZY)
     private Set<UserDetails> users = new HashSet<>();
 
     public Transaction() {
     }
 
-    public Transaction(String title, String abbreviation, int modules, double fee) {
-        this.transactionType = title;
-        this.abbreviation = abbreviation;
-        this.modules = modules;
-        this.fee = fee;
-    }
+    public Transaction(Long id,String transactionType,Date tranasctionDate) {
+    	this.id =id;
+        this.transactionType = transactionType;
+        this.tranasctionDate = tranasctionDate;
 
+
+    }
+    
     public Long getId() {
-        return id;
-    }
+		return id;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public String getTitle() {
-        return transactionType;
-    }
+	public String getTransactionType() {
+		return transactionType;
+	}
 
-    public void setTitle(String title) {
-        this.transactionType = title;
-    }
+	public void setTransactionType(String transactionType) {
+		this.transactionType = transactionType;
+	}
 
-    public String getAbbreviation() {
-        return abbreviation;
-    }
+	public Date getTranasctionDate() {
+		return tranasctionDate;
+	}
 
-    public void setAbbreviation(String abbreviation) {
-        this.abbreviation = abbreviation;
-    }
+	public void setTranasctionDate(Date tranasctionDate) {
+		this.tranasctionDate = tranasctionDate;
+	}
 
-    public int getModules() {
-        return modules;
-    }
+	public Set<UserDetails> getUsers() {
+		return users;
+	}
 
-    public void setModules(int modules) {
-        this.modules = modules;
-    }
+	public void setUsers(Set<UserDetails> users) {
+		this.users = users;
+	}
 
-    public double getFee() {
-        return fee;
-    }
 
-    public void setFee(double fee) {
-        this.fee = fee;
-    }
 
-    public Set<UserDetails> getStudents() {
-        return users;
-    }
-
-    public void setStudents(Set<UserDetails> students) {
-        this.users = students;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Transaction course = (Transaction) o;
-        return id.equals(course.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
-
-    @Override
-    public String toString() {
-        return "Course{" +
-                "id=" + id +
-                ", title='" + transactionType + '\'' +
-                ", abbreviation='" + abbreviation + '\'' +
-                ", modules=" + modules +
-                ", fee=" + fee +
-                '}';
-    }
+    
 }
 
