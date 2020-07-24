@@ -12,5 +12,13 @@ public interface DictionaryService {
 
 
 	public Optional<Dictionary> getDictionarylInfoByName(String name);
+
+	List<Dictionary> getAllDictionaryInfos();
+
+	Dictionary createDictionaryInfo(Dictionary schoolInfo);
+
+	Dictionary updateDictionaryInfo(Dictionary SchoolInfoDetails);
+
+	void deleteDictionaryInfo(Dictionary SchoolInfo);
 	
 }
