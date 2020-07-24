@@ -16,13 +16,7 @@ public class UserDetails implements Serializable {
 
     private String name;
     private int accountnumber;
-    public String getUserID() {
-		return userID;
-	}
 
-	public void setUserID(String userID) {
-		this.userID = userID;
-	}
 
 	private String userID;
     
@@ -69,6 +63,13 @@ public class UserDetails implements Serializable {
 
 	public int getAccountnumber() {
 		return accountnumber;
+	}
+    public String getUserID() {
+		return userID;
+	}
+
+	public void setUserID(String userID) {
+		this.userID = userID;
 	}
 
 	public void setAccountnumber(int accountnumber) {
