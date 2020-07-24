@@ -60,6 +60,23 @@ public class DictornaryRestController {
 		
 	
 	}
+	
+	@DeleteMapping("/dictionary/{id}")
+	public void deleteDictionary(@PathVariable(value = "id") Long id) {
+		
+		
+		 dictionaryService.deleteDictionaryInfo(dictionaryService.getDictionarylInfoById(id));
+	
+		
+		
+	
+	}
+	
+	@PostMapping("/dictionary")
+	public Dictionary createSchool(@Valid @RequestBody Dictionary schoolInfo) {
+		return dictionaryService.createDictionaryInfo(schoolInfo);
+	}
+
 		
 }
 

@@ -20,5 +20,7 @@ public interface DictionaryService {
 	Dictionary updateDictionaryInfo(Dictionary SchoolInfoDetails);
 
 	void deleteDictionaryInfo(Dictionary SchoolInfo);
+
+	public Dictionary getDictionarylInfoById(Long id);
 	
 }
