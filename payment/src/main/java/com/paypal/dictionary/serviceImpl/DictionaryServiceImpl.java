@@ -44,9 +44,20 @@ public class DictionaryServiceImpl implements DictionaryService{
 
 	@Override
 	public void deleteDictionaryInfo(Dictionary d) {
-		 this.dictionaryRepository.save(d);
+		 this.dictionaryRepository.delete(d);
 		
 	}
+
+	@Override
+	public Dictionary getDictionarylInfoById(Long id) {
+		// TODO Auto-generated method stub
+		return null;//this.dictionaryRepository.findById(id);
+		
+	}
+
+
+
+
 	
 
 

@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 
 import com.paypal.dictionary.bean.Dictionary;
-import com.paypal.payment.bean.Transaction;
+import com.paypal.payment.bean.TransactionDetails;
 import com.paypal.payment.bean.UserDetails;
 
 public interface  DictionaryRepository extends JpaRepository<Dictionary, Long> {

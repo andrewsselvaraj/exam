@@ -12,7 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
-import com.paypal.payment.bean.Transaction;
+import com.paypal.payment.bean.TransactionDetails;
 
 public class UserDetailsDTO {
 
@@ -61,12 +61,12 @@ public class UserDetailsDTO {
 	}
 
 
-	public Set<Transaction> getTransactions() {
+	public Set<TransactionDetails> getTransactions() {
 		return transactions;
 	}
 
 
-	public void setTransactions(Set<Transaction> transactions) {
+	public void setTransactions(Set<TransactionDetails> transactions) {
 		this.transactions = transactions;
 	}
 
@@ -80,6 +80,6 @@ public class UserDetailsDTO {
 	private String userID;
     
 
-    private Set<Transaction> transactions = new HashSet<>();
+    private Set<TransactionDetails> transactions = new HashSet<>();
 
 }

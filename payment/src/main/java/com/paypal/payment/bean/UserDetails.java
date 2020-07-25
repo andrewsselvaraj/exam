@@ -28,9 +28,9 @@ public class UserDetails implements Serializable {
             inverseJoinColumns = {
                     @JoinColumn(name = "transaction_id", referencedColumnName = "id",
                             nullable = false, updatable = false)})
-    private Set<Transaction> transactions = new HashSet<>();
+    private Set<TransactionDetails> transactions = new HashSet<>();
 
-    public UserDetails(Long id, String name, int accountnumber, String email, Set<Transaction> transactions) {
+    public UserDetails(Long id, String name, int accountnumber, String email, Set<TransactionDetails> transactions) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -78,11 +78,11 @@ public class UserDetails implements Serializable {
 
 
 
-	public Set<Transaction> getTransactions() {
+	public Set<TransactionDetails> getTransactions() {
 		return transactions;
 	}
 
-	public void setTransactions(Set<Transaction> transactions) {
+	public void setTransactions(Set<TransactionDetails> transactions) {
 		this.transactions = transactions;
 	}
 

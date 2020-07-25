@@ -63,9 +63,9 @@ public class DictornaryRestController {
 	
 	@DeleteMapping("/dictionary/{id}")
 	public void deleteDictionary(@PathVariable(value = "id") Long id) {
+		Dictionary  d= dictionaryService.getDictionarylInfoById(id);
 		
-		
-		 dictionaryService.deleteDictionaryInfo(dictionaryService.getDictionarylInfoById(id));
+		 dictionaryService.deleteDictionaryInfo(d);
 	
 		
 		

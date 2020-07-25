@@ -48,15 +48,11 @@ public class TransactionRestController {
 	private PaymentService transactionService;
 	
 	@GetMapping("/transaction/{type}/{date}")
-	public List<Transaction> findBytransactionType(@PathVariable(value = "type") String type,@PathVariable(value = "type") Date tranasctionDate) {
+	public List<TransactionDetails> findBytransactionType(@PathVariable(value = "type") String type,@PathVariable(value = "type") Date tranasctionDate) {
 		
 
-		List<Transaction> transaction = transactionService.findBytransactionType(type,tranasctionDate);
-		
-	
-				return transaction;
-
-		
+		List<TransactionDetails> transaction = transactionService.findBytransactionTypeandtranasctionDate(type, tranasctionDate);
+		return transaction;	
 	
 	}
 		
